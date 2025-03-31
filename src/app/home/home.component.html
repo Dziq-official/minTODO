@@ -18,7 +18,7 @@
       <div class="flex items-center bg-neutral-500 rounded-md p-2 mb-1 mt-1.5 w-full"  [ngClass]="{'line-through opacity-50': task.completed}"  >
       <input id="checked-checkbox" (change)="taskCompleted(task.id)" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
     <span  [class.done]="task.completed" class="text-wrap">{{task.title}}</span>
-    
+    <p class="opacity-30 text-sm">{{task.date}}</p>
     <button type="button" (click)="removeTask(task.id)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ms-2 px-2 py-0.5 me-1 mb-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">X</button>
   </div>
 }

@@ -11,18 +11,18 @@ interface TaskItem {
 }
 
 @Component({
-  selector: 'app-root',
-  imports: [FormsModule, NgClass],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-todo',
+  imports: [NgClass, FormsModule, RouterOutlet],
+  templateUrl: './todo.component.html',
+  styleUrl: './todo.component.css'
 })
-export class AppComponent {
+export class TodoComponent {
   tasks = signal<TaskItem[]>([]);
   newTask = signal<TaskItem>({ id: 0, title: '', completed: false, date: Date.now() });
 
   taskText = model('');
 
-  addTask() {
+  public addTask() {
     if (this.taskText().trim() === '') {
       return;
     }
@@ -36,13 +36,13 @@ export class AppComponent {
     this.taskText.set('');
   }
 
-  removeTask(taskID: number) {
+  public removeTask(taskID: number) {
     this.tasks.update((prevTasks) => prevTasks.filter((task) => task.id !== taskID));
     console.log('Task removed:', taskID);
     console.log(Date.now());
   }
 
-  taskCompleted(taskID: number) {
+  public taskCompleted(taskID: number) {
     console.log('Task completed:', taskID);
     console.log(Date.now());
 

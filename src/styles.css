@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+    font-family: Cascadia;
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: url("./resources/CascadiaCode.woff2") format("woff2");
+  }
+
+  @theme{
+    --font-display: "Cascadia", sans-serif;
+  }
