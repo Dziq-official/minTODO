@@ -1,53 +1,15 @@
-import { Component, model, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass } from '@angular/common';
-
-interface TaskItem {
-  id: number;
-  title: string;
-  completed: boolean;
-  date: number;
-}
+import { Itask } from './interfaces/itask';
+import { HomeComponent } from "./home/home.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, NgClass],
+  imports: [FormsModule, HomeComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  tasks = signal<TaskItem[]>([]);
-  newTask = signal<TaskItem>({ id: 0, title: '', completed: false, date: Date.now() });
 
-  taskText = model('');
-
-  addTask() {
-    if (this.taskText().trim() === '') {
-      return;
-    }
-    const newTask: TaskItem = {
-      id: this.tasks().length + 1,
-      title: this.taskText(),
-      completed: false,
-      date: Date.now()
-    };
-    this.tasks.update((prevTasks) => [...prevTasks, newTask]);
-    this.taskText.set('');
-  }
-
-  removeTask(taskID: number) {
-    this.tasks.update((prevTasks) => prevTasks.filter((task) => task.id !== taskID));
-    console.log('Task removed:', taskID);
-    console.log(Date.now());
-  }
-
-  taskCompleted(taskID: number) {
-    console.log('Task completed:', taskID);
-    console.log(Date.now());
-
-    this.tasks()[taskID - 1].completed = !this.tasks()[taskID - 1].completed;
-    console.log(this.tasks()[taskID - 1].completed);
-    console.log(this.tasks()[taskID - 1].title);
-  }
 }

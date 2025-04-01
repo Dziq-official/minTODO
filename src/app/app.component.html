@@ -1,28 +1,8 @@
 <div class="bg-neutral-700 w-screen h-screen flex flex-col justify-center items-center text-neutral-200 font-[Cascadia]">
-    <div class="relative w-1/2 mx-auto mt-10">
-      <h1 class="font-bold">Welcome to minTODO</h1>
-      <p class="font-light">type you things todo below</p>
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 flex items-center flex-col justify-center mt-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-        <input [(ngModel)]="taskText"  (keydown.enter)="addTask()" type="text" placeholder="Go to gym...."  class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
-        <button (click)="addTask()" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add task</button>
-    </div>
-
-
-
-<div class=" mx-auto justify-center align-middle text-center grid grid-cols-2 md:grid-cols-3 gap-4" >
-@for (task of tasks(); track $index) {
-      <div class="flex items-center bg-neutral-500 rounded-md p-2 mb-1 mt-1.5 w-full"  [ngClass]="{'line-through opacity-50': task.completed}"  >
-      <input id="checked-checkbox" (change)="taskCompleted(task.id)" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-    <span  [class.done]="task.completed" class="text-wrap">{{task.title}}</span>
-    
-    <button type="button" (click)="removeTask(task.id)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ms-2 px-2 py-0.5 me-1 mb-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">X</button>
+  <div class="w-2/3">
+    <router-outlet ></router-outlet>
   </div>
-}
-</div>
+
 
 <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-neutral-800 font-extralight">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
