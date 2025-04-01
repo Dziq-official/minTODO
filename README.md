@@ -1,6 +1,40 @@
-# MinTODO
+# minTODO
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+minTODO is a simple and minimalistic to-do app designed to help users manage tasks efficiently. With a clean interface and essential features, it offers a distraction-free experience for task management.
+![image](https://github.com/user-attachments/assets/dc599900-a3db-4696-ac40-aa1d9f795883)
+
+---
+
+## Features
+
+- **Add Tasks**: Quickly add new tasks to your to-do list.
+- **Remove Tasks**: Easily delete tasks that are no longer needed.
+- **Mark Tasks as Complete**: Track progress by marking tasks as completed.
+
+---
+
+## Status
+
+The project is currently under development. It was initially created as a learning exercise for Angular, and future updates will focus on:
+
+- Code cleanup.
+- Migrating backend functionality to Angular services.
+
+---
+
+## Technology Stack
+
+- **Angular 19**: A modern framework for building dynamic web applications.
+- **TailwindCSS**: A utility-first CSS framework for styling the app.
+- **[CascadiaCode Font](https://github.com/microsoft/cascadia-code)**: A monospaced font designed for developers, enhancing readability.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**, allowing free use, modification, and distribution. For more details, refer to the `LICENSE` file in the repository.
+
+---
 
 ## Development server
 
@@ -12,20 +46,6 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
 ## Building
 
 To build the project run:
@@ -35,25 +55,3 @@ ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
